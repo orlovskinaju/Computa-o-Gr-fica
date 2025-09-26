@@ -1,28 +1,5 @@
 import cv2
 import numpy as np
-import os
-
-os.makedirs("resultados", exist_ok=True)
-
-def exercicio1():
-    img = cv2.imread("image.png", cv2.IMREAD_GRAYSCALE)
-
-    se_a = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
-    se_b = np.array([[0,1,0],[1,1,1],[0,1,0]], np.uint8)
-
-    erosao_a = cv2.erode(img, se_a)
-    erosao_b = cv2.erode(img, se_b)
-    dilat_a  = cv2.dilate(img, se_a)
-    dilat_b  = cv2.dilate(img, se_b)
-
-    cv2.imwrite("resultados/ex1_erosao_a.png", erosao_a)
-    cv2.imwrite("resultados/ex1_erosao_b.png", erosao_b)
-    cv2.imwrite("resultados/ex1_dilatacao_a.png", dilat_a)
-    cv2.imwrite("resultados/ex1_dilatacao_b.png", dilat_b)
-
-    cv2.imshow("Ex1 - Erosao/Dilatacao", dilat_b)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
 
 
 def exercicio2():
